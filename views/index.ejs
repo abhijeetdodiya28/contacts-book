@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Book</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <h1>Contact Book</h1>
+    <input type="text" id="searchBar" placeholder="Search name...">
+    <button id="searchButton">Search</button>
     <a href="/add" class="button">Add Contact</a>
-    <table>
+    <table id="contactTable">
         <thead>
             <tr>
                 <th>Name</th>
@@ -32,5 +36,6 @@
             <% }) %>
         </tbody>
     </table>
+    <script src="/script.js"></script>
 </body>
 </html>
