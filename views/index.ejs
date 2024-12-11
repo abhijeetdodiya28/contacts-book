@@ -7,35 +7,39 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>Contact Book</h1>
-    <input type="text" id="searchBar" placeholder="Search name...">
-    <button id="searchButton">Search</button>
-    <a href="/add" class="button">Add Contact</a>
-    <table id="contactTable">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% contacts.forEach(contact => { %>
+    <div class="container">
+        <h1>Contact Book</h1>
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Search by name...">
+            <button id="searchButton">Search</button>
+        </div>
+        <a href="/add" class="button">Add Contact</a>
+        <table id="contactTable">
+            <thead>
                 <tr>
-                    <td><%= contact.name %></td>
-                    <td><%= contact.phone %></td>
-                    <td><%= contact.email %></td>
-                    <td>
-                        <form action="/delete/<%= contact._id %>" method="post" style="display:inline;">
-                            <button type="submit" class="delete-button">Delete</button>
-                        </form>
-                        <a href="/edit/<%= contact._id %>" class="button">Edit</a>
-                    </td>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Actions</th>
                 </tr>
-            <% }) %>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <% contacts.forEach(contact => { %>
+                    <tr>
+                        <td><%= contact.name %></td>
+                        <td><%= contact.phone %></td>
+                        <td><%= contact.email %></td>
+                        <td>
+                            <form action="/delete/<%= contact._id %>" method="post" style="display:inline;">
+                                <button type="submit" class="delete-button">Delete</button>
+                            </form>
+                            <a href="/edit/<%= contact._id %>" class="button edit-button">Edit</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
     <script src="/script.js"></script>
 </body>
 </html>
